@@ -6,6 +6,8 @@ import VueRouter from 'unplugin-vue-router/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import Components from 'unplugin-vue-components/vite'
+import vuetify from 'vite-plugin-vuetify'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -57,8 +59,8 @@ export default defineConfig({
       // Auto import for module exports under directories
       // by default it only scan one level of modules under the directory
       dirs: [
-        './components', 
-        './components/**',
+        './src/components', 
+        './src/components/**',
         // './hooks',
         // './composables' // only root modules
         // './composables/**', // all nested modules
@@ -99,7 +101,14 @@ export default defineConfig({
         globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
       },
     }),
+    Components({
+      dirs: ['src/components', 'src/layouts'],
+      extensions: ['vue', 'md'],
+      dts: './components.d.ts',
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+    }),
     vue(),
+    vuetify({ autoImport: true }),
   ],
   resolve: {
     alias: {

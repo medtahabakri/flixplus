@@ -3,7 +3,5 @@
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <LandingLayout> ffsadas </LandingLayout>
 </template>
