@@ -14,8 +14,15 @@ import * as directives from 'vuetify/directives'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import '@mdi/font/css/materialdesignicons.css'
 
+import axios from 'axios'
+
+axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL;
+axios.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded';
+
 
 const app = createApp(App)
+
+
 
 app.use(createPinia())
 app.use(router)

@@ -8,7 +8,7 @@ const WebSocket = require('ws');
 const { func } = require('@hapi/joi');
 var bodyParser = require('body-parser');
 var multer = require('multer');
-var upload = multer();
+var upload = multer({dest:'uploads/'});
 
 const wss = new WebSocket.Server({server:server});
 
@@ -70,8 +70,8 @@ wss.on('connection', function connection(ws,req) {
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(upload.array());
-
+app.use(upload.any());
+app.use(express.static('public'))
 
 app.use('/',router);
 

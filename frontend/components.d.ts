@@ -7,6 +7,10 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AdminLayout: typeof import('./src/layouts/AdminLayout.vue')['default']
+    AppLayout: typeof import('./src/layouts/AppLayout.vue')['default']
+    AuthLayout: typeof import('./src/layouts/AuthLayout.vue')['default']
+    copy: typeof import('./src/layouts/LandingLayout copy.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']

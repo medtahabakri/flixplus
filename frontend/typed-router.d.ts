@@ -19,6 +19,16 @@ declare module 'vue-router/auto-routes' {
    */
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
-    '/about': RouteRecordInfo<'/about', '/about', Record<never, never>, Record<never, never>>,
+    '/admin/': RouteRecordInfo<'/admin/', '/admin', Record<never, never>, Record<never, never>>,
+    '/admin/categories': RouteRecordInfo<'/admin/categories', '/admin/categories', Record<never, never>, Record<never, never>>,
+    '/admin/movie.[id]': RouteRecordInfo<'/admin/movie.[id]', '/admin/movie/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
+    '/admin/movies': RouteRecordInfo<'/admin/movies', '/admin/movies', Record<never, never>, Record<never, never>>,
+    '/admin/users': RouteRecordInfo<'/admin/users', '/admin/users', Record<never, never>, Record<never, never>>,
+    '/app/': RouteRecordInfo<'/app/', '/app', Record<never, never>, Record<never, never>>,
+    '/app/[type]': RouteRecordInfo<'/app/[type]', '/app/:type', { type: ParamValue<true> }, { type: ParamValue<false> }>,
+    '/app/account': RouteRecordInfo<'/app/account', '/app/account', Record<never, never>, Record<never, never>>,
+    '/app/movie.[id]': RouteRecordInfo<'/app/movie.[id]', '/app/movie/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
+    '/login': RouteRecordInfo<'/login', '/login', Record<never, never>, Record<never, never>>,
+    '/signup': RouteRecordInfo<'/signup', '/signup', Record<never, never>, Record<never, never>>,
   }
 }
